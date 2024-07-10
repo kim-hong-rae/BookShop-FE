@@ -3,16 +3,19 @@ import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 import { GlobalStyle } from "./style/global";
 import { ThemeProvider } from "styled-components";
-import { dark, light } from "./style/theme";
+import { ThemeName, dark, getTheme, light } from "./style/theme";
+import ThemeSwitcher from "./components/header/ThemeSwitcher";
+import { useContext, useState } from "react";
+import { BookStoreThemeProvider, ThemeContext } from "./context/themeContext";
 
 function App() {
   return (
-    <ThemeProvider theme={light}>
-      <GlobalStyle themeName="light" />
+    <BookStoreThemeProvider>
+      <ThemeSwitcher />
       <Layout>
         <Home />
       </Layout>
-    </ThemeProvider>
+    </BookStoreThemeProvider>
   );
 }
 
