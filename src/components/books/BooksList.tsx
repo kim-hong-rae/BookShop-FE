@@ -24,7 +24,7 @@ const BooksList = ({ books }: Props) => {
   return (
     <BooksListStyle view={view}>
       {books?.map((item) => (
-        <BookItem key={item.id} book={item} view={view} />
+        <BookItem key={item.id} book={item} />
       ))}
     </BooksListStyle>
   );
